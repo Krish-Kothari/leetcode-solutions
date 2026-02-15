@@ -1,10 +1,5 @@
-class Solution(object):
-    def addBinary(self, a, b):
-        """
-        :type a: str
-        :type b: str
-        :rtype: str
-        """
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
         s = []
         C= 0
         i = len(a) - 1
@@ -19,4 +14,3 @@ class Solution(object):
             s.append(str(C % 2))
             C //= 2
         return ''.join(reversed(s))
-        
