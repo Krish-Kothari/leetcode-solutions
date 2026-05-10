@@ -1,10 +1,5 @@
-class Solution(object):
-    def searchInsert(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
         n=len(nums)
         lo=0
         hi=n-1
@@ -12,8 +7,8 @@ class Solution(object):
             m=(lo+hi)//2
             if nums[m]==target:
                 return m
-            elif nums[m]>target:
-                hi=m-1
             elif nums[m]<target:
                 lo=m+1
+            else:
+                hi=m-1
         return lo
