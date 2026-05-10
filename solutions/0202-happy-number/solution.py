@@ -1,14 +1,14 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        s = set()
-        while n not in s:
-            s.add(n)
-            new_num = 0
-            temp_num = n
-            while temp_num != 0:
-                new_num += (temp_num%10) ** 2
-                temp_num = temp_num//10
-            if new_num == 1:
-                return True
-            n = new_num
-        return False
+        def f(x):
+            c=0
+            while x>0:
+                d=x%10
+                c+=d**2
+                x//=10
+            return c
+        seen=set()
+        while n!=1 and n not in seen:
+            seen.add(n)
+            n=f(n)
+        return n==1
