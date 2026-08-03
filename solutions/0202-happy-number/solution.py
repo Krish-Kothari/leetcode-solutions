@@ -1,14 +1,17 @@
-class Solution:
-    def isHappy(self, n: int) -> bool:
-        def f(x):
-            c=0
-            while x>0:
-                d=x%10
-                c+=d**2
-                x//=10
-            return c
-        seen=set()
-        while n!=1 and n not in seen:
-            seen.add(n)
-            n=f(n)
-        return n==1
+class Solution(object):
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        if(n==1 or n==7):
+            return True
+        elif(n<10):
+            return False
+        else:
+            sum =0
+            while(n>0):
+                temp = n%10
+                sum += temp*temp
+                n= n//10
+            return self.isHappy(sum)
