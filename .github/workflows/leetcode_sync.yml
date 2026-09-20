@@ -13,9 +13,9 @@ jobs:
         - name: Run LeetCode Sync
         uses: joshcai/leetcode-sync@v1.7
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
-          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+          github-token: ${{secrets.GH_TOKEN}}
+          leetcode-csrf-token: ${{secrets.LEETCODE_CSRF_TOKEN}}
+          leetcode-session: ${{secrets.LEETCODE_SESSION}}
           filter-duplicate-secs: 86400
           destination-folder: 'solutions'
           verbose: true
