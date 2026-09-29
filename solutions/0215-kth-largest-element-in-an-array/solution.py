@@ -1,10 +1,4 @@
-class Solution(object):
-    def findKthLargest(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+class Solution:
+    def findKthLargest(self, nums: list[int], k: int) -> int:
         nums.sort()
-        x=nums[::-1]
-        return x[k-1]
+        return nums[-k]
